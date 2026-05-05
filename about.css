@@ -1,109 +1,43 @@
 /* ─── ABOUT HERO ─────────────────────────── */
 .ab-hero {
-  background: var(--purple);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 120px 60px 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+  padding: 160px 60px 80px;
+  border-bottom: 1px solid var(--border);
 }
 
-.ab-hero-bg-blob {
-  position: absolute;
-  top: -200px;
-  right: -200px;
-  width: 700px;
-  height: 700px;
-  background: var(--purple-mid);
-  border-radius: 50%;
-  opacity: 0.3;
-  pointer-events: none;
+.ab-hero-inner {
+  max-width: 700px;
 }
 
-.ab-hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-}
-
-.ab-hero-content .hero-badge {
-  margin-bottom: 36px;
-}
-
-.ab-hero-content h1 {
-  font-size: clamp(52px, 8vw, 110px);
-  font-weight: 900;
-  color: var(--white);
-  line-height: 1.02;
-  letter-spacing: -3px;
-  margin-bottom: 48px;
-}
-
-.ab-hero-content h1 em {
-  font-style: normal;
-  color: var(--orange);
-}
-
-.ab-scroll-hint {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 60px;
-}
-
-.ab-scroll-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255,255,255,0.6);
-  font-size: 18px;
-  animation: ab-bounce 2s ease-in-out infinite;
-}
-
-@keyframes ab-bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
-}
-
-/* Emoji hands row */
-.ab-hero-hands {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 0;
-  width: 100%;
-  max-width: 860px;
-  margin: 0 auto;
-}
-
-.ab-hand {
-  font-size: clamp(64px, 9vw, 120px);
-  line-height: 1;
+.ab-hero-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--purple);
   display: block;
-  flex: 1;
-  text-align: center;
-  transform-origin: bottom center;
-  transition: transform 0.3s;
+  margin-bottom: 24px;
 }
 
-.ab-hand:hover { transform: scale(1.12) translateY(-6px); }
+.ab-hero h1 {
+  font-size: clamp(42px, 6vw, 76px);
+  font-weight: 900;
+  color: var(--dark);
+  line-height: 1.05;
+  letter-spacing: -2.5px;
+  margin-bottom: 22px;
+}
 
-.ab-hand-1 { transform: rotate(-8deg); filter: drop-shadow(0 12px 24px rgba(0,0,0,0.2)); }
-.ab-hand-2 { transform: rotate(5deg) translateY(-10px); filter: drop-shadow(0 12px 24px rgba(0,0,0,0.2)); }
-.ab-hand-3 { transform: rotate(-4deg) translateY(-20px); filter: drop-shadow(0 12px 24px rgba(0,0,0,0.2)); }
-.ab-hand-4 { transform: rotate(2deg) translateY(-8px); filter: drop-shadow(0 12px 24px rgba(0,0,0,0.2)); }
-.ab-hand-5 { transform: rotate(-6deg) translateY(-14px); filter: drop-shadow(0 12px 24px rgba(0,0,0,0.2)); }
-.ab-hand-6 { transform: rotate(9deg) translateY(-6px); filter: drop-shadow(0 12px 24px rgba(0,0,0,0.2)); }
-.ab-hand-7 { transform: rotate(-3deg); filter: drop-shadow(0 12px 24px rgba(0,0,0,0.2)); }
+.ab-hero h1 em {
+  font-style: normal;
+  color: var(--purple);
+}
+
+.ab-hero p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 480px;
+}
 
 /* ─── WHO WE ARE ─────────────────────────── */
 .ab-who {
@@ -470,17 +404,13 @@
 }
 
 .ab-team-avatar {
-  width: 72px;
-  height: 72px;
+  width: 80px;
+  height: 80px;
   border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  font-weight: 900;
-  color: white;
+  object-fit: cover;
+  display: block;
   margin: 0 auto 20px;
-  letter-spacing: -1px;
+  border: 3px solid var(--border);
 }
 
 .ab-team-card h4 {
@@ -566,8 +496,7 @@
 
 /* ─── RESPONSIVE ─────────────────────────── */
 @media (max-width: 1024px) {
-  .ab-hero { padding: 120px 32px 0; }
-  .ab-hero-content h1 { font-size: clamp(44px, 7vw, 80px); letter-spacing: -2px; }
+  .ab-hero { padding: 140px 32px 60px; }
 
   .ab-who { padding: 80px 32px; gap: 48px; }
   .ab-stats-bar { padding: 48px 32px; }
@@ -587,9 +516,8 @@
 }
 
 @media (max-width: 768px) {
-  .ab-hero { padding: 100px 20px 0; }
-  .ab-hero-content h1 { font-size: clamp(38px, 10vw, 60px); letter-spacing: -1.5px; }
-  .ab-hand { font-size: clamp(44px, 10vw, 72px); }
+  .ab-hero { padding: 120px 20px 48px; }
+  .ab-hero h1 { letter-spacing: -1.5px; }
 
   .ab-who { grid-template-columns: 1fr; padding: 60px 20px; gap: 40px; }
   .ab-est-badge { top: 16px; right: 16px; }
@@ -619,9 +547,6 @@
 }
 
 @media (max-width: 480px) {
-  .ab-hero-hands { gap: 0; }
-  .ab-hand { font-size: clamp(32px, 9vw, 52px); }
-
   .ab-team-grid { grid-template-columns: 1fr; }
   .ab-stat { flex: 0 0 100%; }
 }
