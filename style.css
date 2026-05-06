@@ -239,6 +239,39 @@ nav {
 }
 .hero-pill strong { display: block; color: white; font-size: 14px; }
 
+/* ─── SUB-HERO (COMMON) ──────────────────── */
+.sub-hero {
+  padding: 160px 60px 80px;
+  border-bottom: 1px solid var(--border);
+  background: var(--white);
+}
+.sub-hero-inner { max-width: 800px; }
+.sub-hero-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--purple);
+  display: block;
+  margin-bottom: 24px;
+}
+.sub-hero h1 {
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 900;
+  color: var(--dark);
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+}
+.sub-hero h1 em { font-style: normal; color: var(--purple); }
+.sub-hero p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 520px;
+}
+
+
 /* ─── SERVICES BAR ───────────────────────── */
 .services-bar {
   display: grid;
@@ -952,6 +985,9 @@ footer {
   .pf-right .btn-cta { width: 100%; justify-content: center; }
 
   /* ── Footer ── */
+  .sub-hero { padding: 120px 20px 48px; }
+  .sub-hero h1 { letter-spacing: -1.5px; }
+
   footer { padding: 48px 20px 28px; }
   .footer-top {
     grid-template-columns: 1fr 1fr;
