@@ -618,6 +618,34 @@ nav {
   margin-bottom: 28px;
 }
 
+/* ─── FAQ ────────────────────────────────── */
+.faq {
+  padding: 100px 60px;
+  background: var(--white);
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq h2 {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--dark);
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 24px 0;
+}
+
+.faq-item h4 { font-size: 17px; font-weight: 700; color: var(--dark); margin-bottom: 12px; }
+.faq-item p { font-size: 15px; color: var(--muted); line-height: 1.7; }
+
+
 .testi-author { display: flex; align-items: center; gap: 14px; }
 
 .avatar {
