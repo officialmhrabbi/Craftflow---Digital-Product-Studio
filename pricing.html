@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing - Craftflow Digital Product Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Pricing Specific Enhancements */
+    .pricing-container {
+      padding: 80px 60px 100px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* Toggle Styling */
+    .pricing-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 60px;
+    }
+    .toggle-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+      background: var(--border);
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    .switch::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      top: 3px;
+      left: 3px;
+      transition: 0.3s;
+    }
+    .active-toggle .switch { background: var(--purple); }
+    .active-toggle .switch::after { left: 27px; }
+
+    /* Card Grid */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .price-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 48px;
+      position: relative;
+      transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+    }
+
+    .price-card.featured {
+      background: var(--dark);
+      color: white;
+      border-color: var(--dark);
+    }
+
+    .popular-tag {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: var(--purple);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .price-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--purple);
+      margin-bottom: 12px;
+    }
+    .featured .price-label { color: var(--orange); }
+
+    .price-amount {
+      font-size: 48px;
+      font-weight: 900;
+      letter-spacing: -2px;
+      margin-bottom: 4px;
+    }
+
+    .price-sub {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+    .featured .price-sub { color: rgba(255,255,255,0.5); }
+
+    .price-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 40px 0;
+      flex-grow: 1;
+    }
+
+    .price-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 15px;
+      color: var(--text);
+    }
+    .featured .price-features li { color: rgba(255,255,255,0.8); }
+
+    .check-icon {
+      color: var(--purple);
+      flex-shrink: 0;
+    }
+    .featured .check-icon { color: var(--orange); }
+
+    .btn-cta {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
+
+    /* Section Spacing */
+    .pricing-page-section {
+      margin-bottom: 100px;
+    }
+
+    @media (max-width: 1024px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+      .pricing-container { padding: 0 24px 80px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-logo">craft<span>flow</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="index.html#contact">Contact Us</a></li>
+    </ul>
+    <a href="#" class="nav-cta">Book a Call &rarr;</a>
+  </nav>
+
+  <!-- ── PRICING HERO ── -->
+  <section class="sub-hero">
+    <div class="sub-hero-inner">
+      <span class="sub-hero-label">Pricing & Plans</span>
+      <h1>Transparent pricing for <em>ambitious</em> teams.</h1>
+      <p>Choose the model that fits your current stage. From rapid MVP validation to dedicated engineering squads.</p>
+    </div>
+  </section>
+
+  <div class="pricing-container">
+    <div class="pricing-toggle">
+      <span class="toggle-label">Monthly</span>
+      <div class="switch"></div>
+      <span class="toggle-label">Yearly <span style="color: var(--orange); font-size: 10px; background: rgba(255,107,0,0.1); padding: 2px 6px; border-radius: 4px;">-20%</span></span>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-label">MVP Starter</div>
+        <div class="price-amount">$5,000</div>
+        <div class="price-sub">per project / 4 weeks</div>
+        <ul class="price-features">
+          <li><svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Product Discovery</li>
+          <li><svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> UI/UX Design (8 screens)</li>
+          <li><svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Interactive Prototype</li>
+          <li><svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Technical Specs</li>
+        </ul>
+        <a href="#" class="btn-cta">Start MVP &rarr;</a>
+      </div>
+
+      <div class="price-card featured">
+        <div class="popular-tag">Most Popular</div>
+        <div class="price-label">Product Growth</div>
+        <div class="price-amount">$8,500</div>
+        <div class="price-sub">per month / retainer</div>
+        <ul class="price-features">
+          <li><svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Full Product Design</li>
+          <li><svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Dedicated Dev Squad</li>
+          <li><svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Bi-weekly Sprints</li>
+          <li><svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Unlimited Requests</li>
+        </ul>
+        <a href="#" class="btn-cta">Start Scaling &rarr;</a>
+      </div>
+
+      <div class="price-card">
+        <div class="price-label">Enterprise</div>
+        <div class="price-amount">Custom</div>
+        <div class="price-sub">tailored to your needs</div>
+        <ul class="price-features">
+          <li><svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Digital Transformation</li>
+          <li><svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Legacy System Migration</li>
+          <li><svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Security & Compliance</li>
+          <li><svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> 24/7 Priority Support</li>
+        </ul>
+        <a href="#" class="btn-cta">Talk to Us &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WHY OUR PRICING WORKS ── -->
+  <section class="about pricing-page-section" style="background: var(--bg);">
+    <div class="about-left">
+       <div class="about-word">value<span>.</span></div>
+       <p style="margin-top: 20px; color: var(--muted);">We don't just sell hours; we sell outcomes. Our pricing is built on the value we deliver to your business growth.</p>
+    </div>
+    <div class="about-right">
+      <h2>Flexible engagement models for every stage</h2>
+      <p>Building a digital product isn't one-size-fits-all. We offer fixed-price certainty for defined scopes and agile retainers for teams that need to move fast and pivot often.</p>
+      <div class="about-stats" style="border:none; margin-top:20px;">
+        <div>
+          <span class="stat-num">0%</span>
+          <span class="stat-lbl">Hidden Fees</span>
+        </div>
+        <div>
+          <span class="stat-num">100%</span>
+          <span class="stat-lbl">IP Ownership</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PARTNERS ── -->
+  <section class="partners pricing-page-section">
+    <div class="partners-label">Trusted by industry leaders</div>
+    <div class="partners-row">
+      <div class="partner">Logitech</div>
+      <div class="partner">Spotify</div>
+      <div class="partner">Amplitude</div>
+      <div class="partner">Framer</div>
+      <div class="partner">Stripe</div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="faq pricing-page-section">
+    <div class="faq-container">
+      <h2>Common Questions</h2>
+      <div class="faq-item">
+        <h4>How long does a typical project take?</h4>
+        <p>Most of our core design and development sprints take between 6 to 12 weeks, depending on the complexity of the product.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do you work with early-stage startups?</h4>
+        <p>Absolutely. We love helping founders turn their vision into a tangible MVP that is ready for fundraising.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Will I own the source code and designs?</h4>
+        <p>Yes, 100%. Once the project is complete and all payments are finalized, all intellectual property and assets are fully transferred to you.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do you provide ongoing support after launch?</h4>
+        <p>We do. We offer various post-launch maintenance and growth packages to ensure your product continues to perform optimally.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="pre-footer">
+    <div class="pf-brand">cflow.</div>
+    <div class="pf-right">
+      <h3>Grow Your Business.<br>Build Great Products.</h3>
+      <p>Let's create something remarkable together.</p>
+      <a href="#" class="btn-cta">Book a free call &rarr;</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">craft<span>flow</span></div>
+        <p class="footer-desc">Craftflow is an award-winning product design and engineering studio based in New York, USA.</p>
+        <div class="footer-email-row">
+          <span>&#9993;</span>
+          <span>hello@craftflow.io</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>What We Do</h5>
+        <ul>
+          <li><a href="#">UI/UX Design</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Mobile Apps</a></li>
+          <li><a href="#">Product Strategy</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Who We Are</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="#">Testimonials</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Privacy Policy &nbsp;&bull;&nbsp; Terms of Service</p>
+      <div class="socials">
+        <a href="#" class="social" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.731-8.851-8.164-10.649h7.077l4.253 5.627 4.607-5.627zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" class="social" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="#" class="social" aria-label="Dribbble">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24C5.385 24 0 18.615 0 12S5.385 0 12 0s12 5.385 12 12-5.385 12-12 12zm10.12-10.358c-.35-.11-3.17-.953-6.384-.438 1.34 3.684 1.887 6.684 1.992 7.308 2.3-1.555 3.936-4.02 4.395-6.87zm-6.115 7.808c-.153-.9-.75-4.032-2.19-7.77l-.066.02c-5.79 2.015-7.86 6.025-8.048 6.36 1.73 1.35 3.92 2.164 6.298 2.164 1.335 0 2.61-.285 3.767-.775l.24-.01zm-14.33-4.923c.26-.43 3.257-5.285 8.59-6.973.092-.03.182-.063.274-.094a23.36 23.36 0 00-.5-1.004C5.727 9.998 1.715 10.018 1.318 10.024c-.024.268-.034.538-.034.81 0 2.43.89 4.657 2.358 6.37l.03-.047zm-2.168-7.71c.405.005 3.957-.02 8.088-1.81a45.299 45.299 0 00-3.26-4.7 10.127 10.127 0 00-4.828 6.51zm6.048-7.727c.18.24 1.856 2.484 3.288 4.77 3.13-1.173 4.46-2.955 4.62-3.18A9.956 9.956 0 0012 1.96c-1.08 0-2.11.2-3.065.56zm5.928 1.706c-.19.27-1.643 2.195-4.895 3.54.21.43.4.87.574 1.316.065.16.127.32.187.48 3.39-.426 6.745.257 7.085.33A9.981 9.981 0 0021.743 12c0-1.57-.36-3.06-1-4.378l-.025-.027z"/></svg>
+        </a>
+        <a href="#" class="social" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
